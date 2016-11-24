@@ -1,5 +1,7 @@
 package supermercado;
 
-public class Carne extends Comida{
+public abstract class Carne extends Comida{
+	
+	
 
 }

@@ -1,4 +1,4 @@
-package supermercado;
+package productos;
 
 public class Zanahoria extends Verdura{
 	

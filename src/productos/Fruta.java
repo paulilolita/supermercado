@@ -1,4 +1,4 @@
-package supermercado;
+package productos;
 
 public abstract class Fruta extends Comida{
 

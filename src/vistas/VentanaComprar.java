@@ -5,8 +5,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Image.Cebolla;
@@ -20,8 +22,13 @@ import Image.Tortellini;
 import Image.Vino;
 import Image.Vinotinto;
 import Image.Zanahoria;
+
 import javax.swing.SwingConstants;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JRadioButton;
 
 public class VentanaComprar extends JFrame{
@@ -182,9 +189,25 @@ public class VentanaComprar extends JFrame{
 		platanoboton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		platanopanel.add(platanoboton);
 		
-		//botonera.add( anterior );
-		//botonera.add( comprar );
-		//botonera.add( siguiente );
+		productos.Platano p = new productos.Platano();
+		p.setPrecio(10);
+		p.setCantidad(2);
+		
+		productos.Tinto v = new productos.Tinto();
+		v.setPrecio(2);
+		v.setCantidad(34);
+		v.setAno(2000);
+		v.setLitros(100);
+		
+		
+		
+		platanoboton.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaDatos ventanabuscar= new VentanaDatos(v);
+				ventanabuscar.setVisible(true);
+			}
+		});
 		getContentPane().add( botonera, BorderLayout.SOUTH );
 		setTitle("Elija su producto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

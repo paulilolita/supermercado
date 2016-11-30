@@ -1,5 +1,7 @@
 package productos;
 
+import java.util.ArrayList;
+
 public abstract class Vino extends Bebida{
 	
 	private int ano;
@@ -17,6 +19,14 @@ public abstract class Vino extends Bebida{
 	}
 	public void setLitros(float litros) {
 		this.litros = litros;
+	}
+	public ArrayList<String> getPropiedades()
+	{
+		ArrayList<String> propiedades = super.getPropiedades();
+		propiedades.add("Año: " + this.ano);
+		propiedades.add("Litros: " + this.litros);
+		
+		return propiedades;
 	}
 	
 	

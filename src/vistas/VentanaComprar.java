@@ -3,6 +3,7 @@ package vistas;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
@@ -185,6 +186,7 @@ public class VentanaComprar extends JFrame{
 		platanopanel.setBounds(1150, 561, 200, 125);
 		principal.add(platanopanel);
 		
+        
 		JButton platanoboton = new JButton("Comprar");
 		platanoboton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		platanopanel.add(platanoboton);

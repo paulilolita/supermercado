@@ -16,13 +16,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import BaseDatos.db;
 import Image.Supermercado;
 
 public class VentanaPrincipal extends JFrame{
 
 	public VentanaPrincipal()
 	{
-		
+		this.initBD();
 		JPanel principal = new JPanel();
 		JPanel botonera = new JPanel();
 		JButton buscar = new JButton( "Buscar" );
@@ -85,5 +86,10 @@ public class VentanaPrincipal extends JFrame{
 		
 	}
 
+	private void initBD()
+	{
 	
+		db.initBD("Tienda.bd");
+		db.crearTablaProductos();
+	}
 }

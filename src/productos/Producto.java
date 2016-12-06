@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Producto {
 
 	private String nombre;
-	private int precio;
+	private float precio;
 	private int cantidad;
 		
 	public String getNombre() {
@@ -14,10 +14,10 @@ public abstract class Producto {
 	protected void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getPrecio() {
+	public float getPrecio() {
 		return precio;
 	}
-	public void setPrecio(int precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 	public int getCantidad() {

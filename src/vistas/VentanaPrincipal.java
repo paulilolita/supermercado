@@ -17,7 +17,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import BaseDatos.db;
+import Gestor.GestorProductos;
 import Image.Supermercado;
+import Usuarios.UsuarioAbstracto;
 
 public class VentanaPrincipal extends JFrame{
 
@@ -25,10 +27,22 @@ public class VentanaPrincipal extends JFrame{
 	{
 		JPanel principal = new JPanel();
 		JPanel botonera = new JPanel();
-		JButton buscar = new JButton( "Buscar" );
 		JButton comprar = new JButton( "Comprar" );
 		JButton reponer = new JButton( "Reponer" );
 		JButton informes = new JButton( "Informes" );
+		UsuarioAbstracto user= GestorProductos.usuario;
+		if (user.isAdmin()==true)
+		{
+			comprar.setEnabled(false);
+			reponer.setEnabled(true);
+			informes.setEnabled(true);
+		}
+		else
+		{
+			comprar.setEnabled(true);
+			reponer.setEnabled(false);
+			informes.setEnabled(false);
+		}
 		
 		Supermercado ima = new Supermercado();
 		principal.add(ima);
@@ -37,7 +51,6 @@ public class VentanaPrincipal extends JFrame{
 		principal.setLayout( null );
 		principal.setBackground( Color.pink );
 		add( principal, BorderLayout.CENTER );
-		botonera.add( buscar );
 		botonera.add( comprar );
 		botonera.add( reponer );
 		botonera.add( informes );
@@ -47,13 +60,7 @@ public class VentanaPrincipal extends JFrame{
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setSize(screenSize);
 		
-		buscar.addActionListener( new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				VentanaBuscar ventanabuscar= new VentanaBuscar();
-				ventanabuscar.setVisible(true);
-			}
-		});
+		
 		
 		comprar.addActionListener( new ActionListener() {
 			@Override

@@ -16,9 +16,16 @@ public abstract class Verdura extends Comida{
 	public ArrayList<String> getPropiedades()
 	{
 		ArrayList<String> propiedades = super.getPropiedades();
-		propiedades.add("¿Hidrato favorable? " + this.hidratoFavorable);
+		propiedades.add("¿Hidrato favorable? ");
 		
 		return propiedades;
+	}
+	public ArrayList<String> getValores()
+	{
+		ArrayList<String> valores = super.getValores();
+		valores.add(Boolean.toString(this.hidratoFavorable));
+		
+		return valores;
 	}
 	
 	

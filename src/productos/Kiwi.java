@@ -5,6 +5,7 @@ public class Kiwi extends Fruta{
 	{
 		super();
 		this.setNombre("Kiwi");
+		this.setPrecio(0.95);
 	}
 
 }

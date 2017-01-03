@@ -6,6 +6,7 @@ public class Tinto extends Vino{
 	{
 		super();
 		this.setNombre("Tinto");
+		this.setPrecio(1.72);
 		
 	}
 

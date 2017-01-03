@@ -6,6 +6,7 @@ public class Tortellini extends Pasta{
 	{
 		super();
 		this.setNombre("Tortellini");
+		this.setPrecio(1.12);
 		
 	}
 

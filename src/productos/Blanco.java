@@ -6,6 +6,7 @@ public class Blanco extends Vino{
 	{
 		super();
 		this.setNombre("Blanco");
+		this.setPrecio(2.3);
 	}
 
 }

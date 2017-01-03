@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public abstract class Producto {
 
 	private String nombre;
-	private float precio;
-	private int cantidad;
+	private double precio;
+	private int id;
 		
 	public String getNombre() {
 		return nombre;
@@ -14,26 +14,38 @@ public abstract class Producto {
 	protected void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(float precio) {
+	protected void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public int getCantidad() {
-		return cantidad;
-	}
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
+	
 	public ArrayList<String> getPropiedades()
 	{
 		ArrayList<String> propiedades = new ArrayList<String>();
-		propiedades.add("Nombre: " + this.nombre);
-		propiedades.add("Precio: " + this.precio);
-		propiedades.add("Cantidad: " + this.cantidad);
+		propiedades.add("Id");
+		propiedades.add("Nombre");
+		propiedades.add("Precio");
+
 		
 		return propiedades;
+	}
+	
+	public ArrayList<String> getValores()
+	{
+		ArrayList<String> valores = new ArrayList<String>();
+		valores.add(Integer.toString(this.id));
+		valores.add(this.nombre);
+		valores.add(Double.toString(this.precio));	
+		
+		return valores;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

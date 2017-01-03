@@ -23,10 +23,18 @@ public abstract class Vino extends Bebida{
 	public ArrayList<String> getPropiedades()
 	{
 		ArrayList<String> propiedades = super.getPropiedades();
-		propiedades.add("Año: " + this.ano);
-		propiedades.add("Litros: " + this.litros);
+		propiedades.add("Año");
+		propiedades.add("Litros");
 		
 		return propiedades;
+	}
+	public ArrayList<String> getValores()
+	{
+		ArrayList<String> valores = super.getValores();
+		valores.add(Integer.toString(this.ano));
+		valores.add(Float.toString(this.litros));
+		
+		return valores;
 	}
 	
 	

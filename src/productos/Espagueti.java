@@ -5,6 +5,7 @@ public class Espagueti extends Pasta{
 	{
 		super();
 		this.setNombre("Espagueti");
+		this.setPrecio(0.8);
 	}
 
 }

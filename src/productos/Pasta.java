@@ -17,9 +17,16 @@ public abstract class Pasta extends Comida{
 	public ArrayList<String> getPropiedades()
 	{
 		ArrayList<String> propiedades = super.getPropiedades();
-		propiedades.add("Origen: " + this.origen);
+		propiedades.add("Origen");
 		
 		return propiedades;
+	}
+	public ArrayList<String> getValores()
+	{
+		ArrayList<String> valores = super.getValores();
+		valores.add(this.origen);
+		
+		return valores;
 	}
 
 }

@@ -23,7 +23,6 @@ public class VentanaPrincipal extends JFrame{
 
 	public VentanaPrincipal()
 	{
-		this.initBD();
 		JPanel principal = new JPanel();
 		JPanel botonera = new JPanel();
 		JButton buscar = new JButton( "Buscar" );
@@ -59,7 +58,7 @@ public class VentanaPrincipal extends JFrame{
 		comprar.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				VentanaComprar ventanacomprar= new VentanaComprar();
+				VentanaProductos ventanacomprar= new VentanaProductos();
 				ventanacomprar.setVisible(true);
 			}
 		});
@@ -86,10 +85,5 @@ public class VentanaPrincipal extends JFrame{
 		
 	}
 
-	private void initBD()
-	{
 	
-		db.initBD("Tienda.bd");
-		db.crearTablaProductos();
-	}
 }

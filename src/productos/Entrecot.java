@@ -6,6 +6,7 @@ public class Entrecot extends Carne{
 	{
 		super();
 		this.setNombre("Entrecot");
+		this.setPrecio(18);
 	}
 
 }

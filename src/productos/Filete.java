@@ -6,6 +6,7 @@ public class Filete extends Carne{
 	{
 		super();
 		this.setNombre("Filete");
+		this.setPrecio(16);
 	}
 
 }

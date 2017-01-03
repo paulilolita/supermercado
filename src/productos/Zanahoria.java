@@ -6,6 +6,7 @@ public class Zanahoria extends Verdura{
 	{
 		super();
 		this.setNombre("Zanahoria");
+		this.setPrecio(0.35);
 		this.setHidratoFavorable(true);
 		
 	}

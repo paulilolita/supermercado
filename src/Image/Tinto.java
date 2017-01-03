@@ -7,9 +7,9 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-public class Vino extends JPanel{
+public class Tinto extends JPanel{
 	
-	public Vino() {
+	public Tinto() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setSize(screenSize);
 		}
@@ -21,7 +21,7 @@ public class Vino extends JPanel{
 		 
 		//Se selecciona la imagen que tenemos en el paquete de la //ruta del programa
 		 
-		ImageIcon Img = new ImageIcon(getClass().getResource("/Image/vino.jpg")); 
+		ImageIcon Img = new ImageIcon(getClass().getResource("/Image/tinto.jpg")); 
 		 
 		//se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
 		 

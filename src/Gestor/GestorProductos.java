@@ -1,10 +1,19 @@
 package Gestor;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 
 
 
+
+
+import java.util.Date;
+
+import Usuarios.Usuario;
 import Usuarios.UsuarioAbstracto;
 import BaseDatos.db;
 import productos.*;
@@ -123,6 +132,32 @@ public class GestorProductos {
 		listaproductos.add(e);
 		
 	}
+	public static void escribirRegistro(Producto p)
+	{
+		String separador = ",";
+		Usuario user = (Usuario) GestorProductos.usuario;
+		String linea= user.getNombre();
+		linea= linea + separador + user.getApellido();
+		linea= linea + separador + user.getEmail();
+		linea= linea + separador + user.getTelefono();
+		Date fecha= new Date();
+		linea=linea + separador + fecha.toString();
+		
+		ArrayList<String> valores=p.getValores();
+		for (int i=1;i<valores.size();i++)
+		{
+			linea=linea + separador + valores.get(i);
+		}
+		try{
+		    PrintWriter writer = new PrintWriter(new FileOutputStream(new File("Registro-Compras.txt"), true));
+		    writer.println(linea);
+		    //writer.append(linea);
+		    writer.close();
+		} catch (IOException e) {
+		   System.out.println("Ha ocurrido un error al escribir en el registro");
+		}
+		
+	}
 	public static void eliminarProducto (int id)
 	{
 		int posicion=-1;
@@ -135,6 +170,7 @@ public class GestorProductos {
 			}
 			
 		}
+		escribirRegistro(listaproductos.get(posicion));
 		if (posicion>-1)
 		{
 			listaproductos.remove(posicion);

@@ -1,0 +1,2 @@
+yy,yy,uu,uu,Tue Jan 03 20:21:22 CET 2017,Cebolla,1.2,false
+yy,yy,uu,uu,Tue Jan 03 20:21:33 CET 2017,Kiwi,0.95

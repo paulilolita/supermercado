@@ -42,62 +42,82 @@ public class GestorProductos {
     }
 	public static void anadirCebolla (Cebolla c)
 	{
+		
+		int id= db.anadirProducto(c.getNombre(), c.getPrecio(), null, c.isHidratoFavorable(), null, null);
+		c.setId(id);
 		listaproductos.add(c);
-		db.anadirProducto(c.getNombre(), c.getPrecio(), null, c.isHidratoFavorable(), null, null);
 		
 	}
 	public static void anadirZanahoria (Zanahoria z)
 	{
+		
+		int id=db.anadirProducto(z.getNombre(), z.getPrecio(), null, z.isHidratoFavorable(),null, null);
+		z.setId(id);
 		listaproductos.add(z);
-		db.anadirProducto(z.getNombre(), z.getPrecio(), null, z.isHidratoFavorable(),null, null);
 		
 	}
 	public static void anadirEspagueti (Espagueti e)
 	{
+		
+		int id=db.anadirProducto(e.getNombre(), e.getPrecio(), e.getOrigen(),null, null, null);
+		e.setId(id);
 		listaproductos.add(e);
-		db.anadirProducto(e.getNombre(), e.getPrecio(), e.getOrigen(),null, null, null);
 		
 	}
 	public static void anadirTortellini (Tortellini t)
 	{
+		
+		int id=db.anadirProducto(t.getNombre(), t.getPrecio(), t.getOrigen(),null , null, null);
+		t.setId(id);
 		listaproductos.add(t);
-		db.anadirProducto(t.getNombre(), t.getPrecio(), t.getOrigen(),null , null, null);
 		
 	}
 	public static void anadirBlanco (Blanco b)
 	{
+		
+		int id=db.anadirProducto(b.getNombre(), b.getPrecio(), null, null, b.getAno(), b.getLitros());
+		b.setId(id);
 		listaproductos.add(b);
-		db.anadirProducto(b.getNombre(), b.getPrecio(), null, null, b.getAno(), b.getLitros());
 		
 	}
 	public static void anadirTinto (Tinto t)
 	{
+		
+		int id=db.anadirProducto(t.getNombre(), t.getPrecio(), null, null, t.getAno(), t.getLitros());
+		t.setId(id);
 		listaproductos.add(t);
-		db.anadirProducto(t.getNombre(), t.getPrecio(), null, null, t.getAno(), t.getLitros());
 		
 	}
 	public static void anadirPlatano (Platano p)
 	{
+		
+		int id=db.anadirProducto(p.getNombre(), p.getPrecio(), null, null, null, null);
+		p.setId(id);
 		listaproductos.add(p);
-		db.anadirProducto(p.getNombre(), p.getPrecio(), null, null, null, null);
 		
 	}
 	public static void anadirKiwi (Kiwi k)
 	{
+		
+		int id=db.anadirProducto(k.getNombre(), k.getPrecio(), null, null, null, null);
+		k.setId(id);
 		listaproductos.add(k);
-		db.anadirProducto(k.getNombre(), k.getPrecio(), null, null, null, null);
 		
 	}
 	public static void anadirFilete (Filete f)
 	{
+		
+		int id=db.anadirProducto(f.getNombre(), f.getPrecio(), null, null, null, null);
+		f.setId(id);
 		listaproductos.add(f);
-		db.anadirProducto(f.getNombre(), f.getPrecio(), null, null, null, null);
 		
 	}
 	public static void anadirEntrecot (Entrecot e)
 	{
+		
+		int id=db.anadirProducto(e.getNombre(), e.getPrecio(), null, null, null, null);
+		e.setId(id);
 		listaproductos.add(e);
-		db.anadirProducto(e.getNombre(), e.getPrecio(), null, null, null, null);
 		
 	}
 	public static void eliminarProducto (int id)

@@ -127,12 +127,13 @@ public class db {
             
             
 	}
-	public static void anadirProducto( String nombre, double precio, String origen, Boolean hidratoFavorable, Integer ano, Float litros) {
-		if (statement==null) return;
+	public static int anadirProducto( String nombre, double precio, String origen, Boolean hidratoFavorable, Integer ano, Float litros) {
+		int id = -1;
+		if (statement==null) return -1;
 		try {
 			String sql = "insert into productos (nombre, precio, origen, hidratoFavorable, ano, litros)" +
 				" values (?,?,?, ?,?,?)";
-			PreparedStatement st = connection.prepareStatement(sql);
+			PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			st.setString(1, nombre);
 			st.setDouble(2, precio);
 			if (origen != null) {
@@ -157,11 +158,21 @@ public class db {
 				}
 			
 			st.execute();
+			 try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+		            if (generatedKeys.next()) {
+		                id = generatedKeys.getInt(1);
+		            }
+		            else {
+		                throw new SQLException("No se ha podido obtener el ID del producto creado");
+		            }
+		        }
+			
 			st.close();
 		} catch (SQLException e) {
 			// Si hay excepción es que la tabla ya existía (lo cual es correcto)
 			// e.printStackTrace();  
 		}
+		return id;
 	}
 	public static void cargarproductos()
 	{

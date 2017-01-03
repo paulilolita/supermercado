@@ -112,6 +112,7 @@ public class VentanaRegistro extends JFrame{
 				{
 					VentanaPrincipal miVentana= new VentanaPrincipal();
 					miVentana.setVisible(true);
+					CloseFrame();
 				}
 			}
 		});
@@ -122,5 +123,8 @@ public class VentanaRegistro extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setSize(screenSize);
+	}
+	public void CloseFrame(){
+	    super.dispose();
 	}
 }

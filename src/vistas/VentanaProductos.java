@@ -356,7 +356,7 @@ public class VentanaProductos extends JFrame{
 			
 		
 		setTitle("Elija su producto");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setSize(screenSize);
 	}

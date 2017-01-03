@@ -43,7 +43,7 @@ public class VentanaPrincipal extends JFrame{
 		botonera.add( informes );
 		add( botonera, BorderLayout.SOUTH );
 		setTitle("Bienvenido al supermercado");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setSize(screenSize);
 		

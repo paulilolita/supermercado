@@ -116,7 +116,6 @@ public class GestorProductos {
 		{
 			listaproductos.remove(posicion);
 			db.eliminarProducto(id);
-			System.out.println("producot eliminado");
 		}
 		else
 		{

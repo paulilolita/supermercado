@@ -4,12 +4,15 @@ import java.util.ArrayList;
 
 
 
+
+import Usuarios.UsuarioAbstracto;
 import BaseDatos.db;
 import productos.*;
 
 public class GestorProductos {
 	
 	public static ArrayList<Producto> listaproductos= new ArrayList<Producto>();
+	public static UsuarioAbstracto usuario;
     
 	public static int cantidadTipoProducto(String nombre)
 	{

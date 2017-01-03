@@ -13,7 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import Usuarios.Administrador;
+import Usuarios.Usuario;
 import BaseDatos.db;
+import Gestor.GestorProductos;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -34,11 +36,11 @@ public class VentanaRegistro extends JFrame{
 		principal.setBackground( Color.pink );
 		
 		JLabel lblNewLabel = new JLabel("Acceso como usuario");
-		lblNewLabel.setBounds(406, 93, 100, 14);
+		lblNewLabel.setBounds(406, 93, 120, 14);
 		principal.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Acceso como administrador");
-		lblNewLabel_1.setBounds(735, 93, 130, 14);
+		lblNewLabel_1.setBounds(735, 93, 158, 14);
 		principal.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre");
@@ -62,11 +64,11 @@ public class VentanaRegistro extends JFrame{
 		principal.add(passwordField);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
-		lblContrasea.setBounds(735, 188, 56, 14);
+		lblContrasea.setBounds(735, 188, 77, 14);
 		principal.add(lblContrasea);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setBounds(406, 283, 46, 14);
+		lblTelefono.setBounds(406, 283, 64, 14);
 		principal.add(lblTelefono);
 		
 		textField = new JTextField();
@@ -95,6 +97,23 @@ public class VentanaRegistro extends JFrame{
 		principal.add(textField_4);
 		
 		JButton btnNewButton = new JButton("Guardar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String nombre= textField.getText();
+				String apellido= textField_1.getText();
+				String email= textField_2.getText();
+				String telefono= textField_3.getText();
+				Usuario usuario= new Usuario();
+				usuario.setNombre(nombre);
+				usuario.setApellido(apellido);
+				usuario.setEmail(email);
+				usuario.setTelefono(telefono);
+				GestorProductos.usuario=usuario;
+				VentanaPrincipal miVentana= new VentanaPrincipal();
+				miVentana.setVisible(true);
+				CloseFrame();
+			}
+		});
 		btnNewButton.setBounds(528, 368, 89, 23);
 		principal.add(btnNewButton);
 		
@@ -110,6 +129,7 @@ public class VentanaRegistro extends JFrame{
 				}
 				else
 				{
+					GestorProductos.usuario=admin;
 					VentanaPrincipal miVentana= new VentanaPrincipal();
 					miVentana.setVisible(true);
 					CloseFrame();

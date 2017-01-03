@@ -1,6 +1,6 @@
 package Usuarios;
 
-public class Administrador {
+public class Administrador extends UsuarioAbstracto{
 
 	
 	private String nombre;
@@ -18,6 +18,11 @@ public class Administrador {
 	}
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+	@Override
+	public boolean isAdmin() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 	
 	

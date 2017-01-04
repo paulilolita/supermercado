@@ -29,12 +29,15 @@ import Gestor.GestorProductos;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JComboBox;
+
 public class VentanaReponer extends JFrame{
-	private JTextField textField;
+
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private JComboBox<String> comboBox;
 	
 	public VentanaReponer()
 	{
@@ -43,11 +46,6 @@ public class VentanaReponer extends JFrame{
 	principal.setLayout( null );
 	principal.setBackground( Color.pink );
 	getContentPane().add( principal, BorderLayout.CENTER );
-	
-	textField = new JTextField();
-	textField.setBounds(10, 57, 86, 20);
-	principal.add(textField);
-	textField.setColumns(10);
 	
 	textField_1 = new JTextField();
 	textField_1.setBounds(163, 57, 86, 20);
@@ -72,7 +70,7 @@ public class VentanaReponer extends JFrame{
 	JButton btnNewButton = new JButton("Reponer");
 	btnNewButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			String nombre= textField.getText();
+			String nombre= (String) comboBox.getSelectedItem();
 		    int cantidad= Integer.parseInt(textField_1.getText());
 			Producto nuevo ;
 			for (int i=0;i<cantidad;i++)
@@ -152,6 +150,32 @@ public class VentanaReponer extends JFrame{
 	JLabel lblOrigen = new JLabel("Origen");
 	lblOrigen.setBounds(180, 129, 46, 14);
 	principal.add(lblOrigen);
+	
+	String[] arraynombres= new String[10];
+	productos.Cebolla auxcebolla = new productos.Cebolla();
+	arraynombres[0]=auxcebolla.getNombre();
+	productos.Tortellini auxtortellini = new productos.Tortellini();
+	arraynombres[1]=auxtortellini.getNombre();
+	productos.Zanahoria auxzanahoria = new productos.Zanahoria();
+	arraynombres[2]=auxzanahoria.getNombre();
+	productos.Espagueti auxespagueti = new productos.Espagueti();
+	arraynombres[3]=auxespagueti.getNombre();
+	productos.Blanco auxblanco = new productos.Blanco();
+	arraynombres[4]=auxblanco.getNombre();
+	productos.Tinto auxtinto = new productos.Tinto();
+	arraynombres[5]=auxtinto.getNombre();
+	productos.Entrecot auxentrecot = new productos.Entrecot();
+	arraynombres[6]=auxentrecot.getNombre();
+	productos.Filete auxfilete = new productos.Filete();
+	arraynombres[7]=auxfilete.getNombre();
+	productos.Kiwi auxkiwi = new productos.Kiwi();
+	arraynombres[8]=auxkiwi.getNombre();
+	productos.Platano auxplatano = new productos.Platano();
+	arraynombres[9]=auxplatano.getNombre();
+	
+	comboBox = new JComboBox<String>(arraynombres);
+	comboBox.setBounds(10, 57, 86, 20);
+	principal.add(comboBox);
 	
 	setTitle("Reponga el producto");
 	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

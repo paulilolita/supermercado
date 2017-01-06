@@ -1,7 +1,9 @@
 package Gestor;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -157,6 +159,30 @@ public class GestorProductos {
 		   System.out.println("Ha ocurrido un error al escribir en el registro");
 		}
 		
+	}
+	public static ArrayList<String[]> leerRegistro()
+	{
+		ArrayList<String[]> registros= new ArrayList<String[]>();
+		String[] palabras;
+		BufferedReader br = null;
+		try {
+			FileReader fr = new FileReader("Registro-Compras.txt");
+			br = new BufferedReader(fr);
+		    String line = br.readLine();
+		    while (line != null) {
+		    	palabras = line.split(",");
+		        registros.add(palabras);
+		        line = br.readLine();
+		    }
+		} catch(Exception ex) {
+			System.out.println("Error al leer el registro.");
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+			}
+		}
+		return registros;
 	}
 	public static void eliminarProducto (int id)
 	{

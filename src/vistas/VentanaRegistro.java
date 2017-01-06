@@ -19,6 +19,7 @@ import Gestor.GestorProductos;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class VentanaRegistro extends JFrame{
 	private JPasswordField passwordField;
@@ -36,27 +37,39 @@ public class VentanaRegistro extends JFrame{
 		principal.setBackground( Color.pink );
 		
 		JLabel lblNewLabel = new JLabel("Acceso como usuario");
-		lblNewLabel.setBounds(406, 93, 120, 14);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Traditional Arabic", Font.PLAIN, 18));
+		lblNewLabel.setBounds(502, 68, 148, 39);
 		principal.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Acceso como administrador");
-		lblNewLabel_1.setBounds(735, 93, 158, 14);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Traditional Arabic", Font.PLAIN, 18));
+		lblNewLabel_1.setBounds(778, 84, 202, 23);
 		principal.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre");
-		lblNewLabel_2.setBounds(406, 136, 46, 14);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(406, 130, 83, 20);
 		principal.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Apellido");
-		lblNewLabel_3.setBounds(406, 185, 46, 14);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setBounds(406, 179, 64, 20);
 		principal.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Email");
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_4.setBounds(406, 232, 46, 14);
 		principal.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Usuario");
-		lblNewLabel_5.setBounds(735, 136, 46, 14);
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_5.setForeground(Color.WHITE);
+		lblNewLabel_5.setBounds(735, 130, 57, 29);
 		principal.add(lblNewLabel_5);
 		
 		passwordField = new JPasswordField();
@@ -64,10 +77,14 @@ public class VentanaRegistro extends JFrame{
 		principal.add(passwordField);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
+		lblContrasea.setForeground(Color.WHITE);
+		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblContrasea.setBounds(735, 188, 77, 14);
 		principal.add(lblContrasea);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
+		lblTelefono.setForeground(Color.WHITE);
+		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTelefono.setBounds(406, 283, 64, 14);
 		principal.add(lblTelefono);
 		

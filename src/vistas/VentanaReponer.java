@@ -37,7 +37,7 @@ public class VentanaReponer extends JFrame{
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JComboBox<String> comboBox;
+	private JComboBox comboBox;
 	
 	public VentanaReponer()
 	{
@@ -173,7 +173,7 @@ public class VentanaReponer extends JFrame{
 	productos.Platano auxplatano = new productos.Platano();
 	arraynombres[9]=auxplatano.getNombre();
 	
-	comboBox = new JComboBox<String>(arraynombres);
+	comboBox = new JComboBox(arraynombres);
 	comboBox.setBounds(10, 57, 86, 20);
 	principal.add(comboBox);
 	

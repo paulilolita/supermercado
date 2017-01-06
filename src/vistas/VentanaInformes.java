@@ -31,6 +31,8 @@ public class VentanaInformes extends JFrame {
 		JButton informefecha = new JButton( "Informe por fecha" );
 		informefecha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				VentanaInformeFecha ventanafecha= new VentanaInformeFecha();
+				ventanafecha.setVisible(true);
 			}
 		});
 		JButton informeproducto = new JButton( "Informe por producto" );

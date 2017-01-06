@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -24,6 +25,8 @@ public class GestorProductos {
 	
 	public static ArrayList<Producto> listaproductos= new ArrayList<Producto>();
 	public static UsuarioAbstracto usuario;
+	
+	public static final String formatoFechas = "dd/MM/yyyy";
     
 	public static int cantidadTipoProducto(String nombre)
 	{
@@ -143,7 +146,8 @@ public class GestorProductos {
 		linea= linea + separador + user.getEmail();
 		linea= linea + separador + user.getTelefono();
 		Date fecha= new Date();
-		linea=linea + separador + fecha.toString();
+		SimpleDateFormat formatter = new SimpleDateFormat(formatoFechas);
+		linea=linea + separador + formatter.format(fecha);
 		
 		ArrayList<String> valores=p.getValores();
 		for (int i=1;i<valores.size();i++)

@@ -66,6 +66,7 @@ public class VentanaInformeCliente extends JFrame{
 		}
 		
 		JComboBox comboBox = new JComboBox(nombres);
+		comboBox.setSelectedIndex(-1);
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				if (arg0.getStateChange() == arg0.SELECTED) {

@@ -194,11 +194,10 @@ public class GestorProductos {
 				posicion= i;
 				break;
 			}
-			
 		}
-		escribirRegistro(listaproductos.get(posicion));
 		if (posicion>-1)
 		{
+			escribirRegistro(listaproductos.get(posicion));
 			listaproductos.remove(posicion);
 			db.eliminarProducto(id);
 		}

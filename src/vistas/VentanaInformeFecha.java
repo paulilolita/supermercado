@@ -35,13 +35,13 @@ public class VentanaInformeFecha extends JFrame{
 	private JTable table;
 	private JScrollPane scroll;
 	private ArrayList<String[]> registro;
-	int posicionNombre = 0;
-	int posicionApellido = 1;
-	int posicionEmail = 2;
-	int posicionTelefono =3;
-	int posicionFecha=4;
-	int posicionProducto=5;
-	int posicionPrecio=6;
+	private int posicionNombre = 0;
+	private int posicionApellido = 1;
+	private int posicionEmail = 2;
+	private int posicionTelefono=3;
+	private int posicionFecha=4;
+	private int posicionProducto=5;
+	private int posicionPrecio=6;
 	private JDatePickerImpl datePicker;
 	private JDatePickerImpl datePicker_1;
 	public VentanaInformeFecha()

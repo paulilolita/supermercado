@@ -38,6 +38,8 @@ public class VentanaInformes extends JFrame {
 		JButton informeproducto = new JButton( "Informe por producto" );
 		informeproducto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				VentanaInformeProducto ventanaproducto= new VentanaInformeProducto();
+				ventanaproducto.setVisible(true);
 			}
 		});
 		

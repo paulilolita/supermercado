@@ -28,6 +28,8 @@ import Gestor.GestorProductos;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JComboBox;
 
@@ -38,7 +40,7 @@ public class VentanaReponer extends JFrame{
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JComboBox comboBox;
-	
+	private String[] arraynombres;
 	public VentanaReponer()
 	{
 
@@ -48,22 +50,25 @@ public class VentanaReponer extends JFrame{
 	getContentPane().add( principal, BorderLayout.CENTER );
 	
 	textField_1 = new JTextField();
-	textField_1.setBounds(163, 57, 86, 20);
+	textField_1.setBounds(538, 95, 86, 20);
 	principal.add(textField_1);
 	textField_1.setColumns(10);
 	
 	textField_2 = new JTextField();
-	textField_2.setBounds(317, 57, 86, 20);
+	textField_2.setEnabled(false);
+	textField_2.setBounds(739, 95, 86, 20);
 	principal.add(textField_2);
 	textField_2.setColumns(10);
 	
 	textField_3 = new JTextField();
-	textField_3.setBounds(10, 158, 86, 20);
+	textField_3.setEnabled(false);
+	textField_3.setBounds(358, 258, 86, 20);
 	principal.add(textField_3);
 	textField_3.setColumns(10);
 	
 	textField_4 = new JTextField();
-	textField_4.setBounds(163, 158, 86, 20);
+	textField_4.setEnabled(false);
+	textField_4.setBounds(538, 258, 86, 20);
 	principal.add(textField_4);
 	textField_4.setColumns(10);
 	
@@ -124,34 +129,38 @@ public class VentanaReponer extends JFrame{
 				GestorProductos.anadirEntrecot((Entrecot) nuevo);
 				break;
 			}
-			
+			comboBox.setSelectedIndex(-1);
+			textField_1.setText("");
+			textField_2.setText("");
+			textField_3.setText("");
+			textField_4.setText("");
 			}
 		}
 	});
-	btnNewButton.setBounds(314, 157, 89, 23);
+	btnNewButton.setBounds(736, 250, 102, 36);
 	principal.add(btnNewButton);
 	
 	JLabel lblNombre = new JLabel("Nombre");
-	lblNombre.setBounds(23, 32, 46, 14);
+	lblNombre.setBounds(362, 43, 46, 14);
 	principal.add(lblNombre);
 	
 	JLabel lblCantidad = new JLabel("Cantidad");
-	lblCantidad.setBounds(180, 32, 46, 14);
+	lblCantidad.setBounds(555, 43, 46, 14);
 	principal.add(lblCantidad);
 	
 	JLabel lblAo = new JLabel("A\u00F1o");
-	lblAo.setBounds(340, 32, 46, 14);
+	lblAo.setBounds(759, 43, 46, 14);
 	principal.add(lblAo);
 	
 	JLabel lblLitros = new JLabel("Litros");
-	lblLitros.setBounds(23, 129, 46, 14);
+	lblLitros.setBounds(362, 215, 46, 14);
 	principal.add(lblLitros);
 	
 	JLabel lblOrigen = new JLabel("Origen");
-	lblOrigen.setBounds(180, 129, 46, 14);
+	lblOrigen.setBounds(555, 215, 46, 14);
 	principal.add(lblOrigen);
 	
-	String[] arraynombres= new String[10];
+	arraynombres= new String[10];
 	productos.Cebolla auxcebolla = new productos.Cebolla();
 	arraynombres[0]=auxcebolla.getNombre();
 	productos.Tortellini auxtortellini = new productos.Tortellini();
@@ -174,7 +183,16 @@ public class VentanaReponer extends JFrame{
 	arraynombres[9]=auxplatano.getNombre();
 	
 	comboBox = new JComboBox(arraynombres);
-	comboBox.setBounds(10, 57, 86, 20);
+	comboBox.setSelectedIndex(-1);
+	comboBox.addItemListener(new ItemListener() {
+		public void itemStateChanged(ItemEvent arg0) {
+			if (arg0.getStateChange() == arg0.SELECTED) {
+				String producto= arraynombres[comboBox.getSelectedIndex()];
+				actualizarVentana(producto);
+			}
+		}
+	});
+	comboBox.setBounds(343, 95, 86, 20);
 	principal.add(comboBox);
 	
 	setTitle("Reponga el producto");
@@ -182,5 +200,23 @@ public class VentanaReponer extends JFrame{
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	this.setSize(screenSize);
 	
+	}
+	public void actualizarVentana(String producto)
+	{
+		textField_2.setEnabled(false);
+		textField_3.setEnabled(false);
+		textField_4.setEnabled(false);
+		switch(producto)
+		{
+		case "Espagueti":
+		case "Tortellini":
+            textField_4.setEnabled(true);
+			break;
+		case "Blanco":
+		case "Tinto":
+			textField_2.setEnabled(true);
+			textField_3.setEnabled(true);
+			break;
+		}
 	}
 }
